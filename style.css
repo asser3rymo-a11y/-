@@ -1,0 +1,481 @@
+/* ====== أساسي ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+}
+
+body {
+    background: #f5faf8;
+    color: rgb(0, 255, 149);
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ====== الشريط العلوي ====== */
+.top-bar {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    color: rgb(0, 255, 149);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 12px 10px;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ====== الهيدر ====== */
+.main-header {
+    background: #ffffff00;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color:  rgb(0, 255, 149);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0077b6;
+}
+
+/* ====== الهيرو ====== */
+.hero {
+    height: 85vh;
+    background: url("صور/bg.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 100px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 50px;
+}
+
+/* ====== الأقسام ====== */
+.section {
+    padding: 80px 0;
+}
+
+.gray-bg {
+    background: #eef2f7;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 70px;
+}
+
+/* ====== الصور الثلاثة ====== */
+.logo-explanation {
+    display: flex;
+    flex-direction: column; /* الصور تحت بعض */
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.logo-box {
+    background: white;
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.logo-box img {
+    width: 50%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.logo-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ألوان خلفيات الشعار */
+.green-bg { background-color: #3cb04400; color:  rgb(0, 255, 149); }
+.white-bg { background-color: #ffffff00; color: rgb(0, 255, 149); }
+.blue-bg { background-color: #0076b600; color:  rgb(0, 255, 149); }
+.text {
+  font-size: clamp(20px, 4vw, 36px);
+}
+
+/* ====== معرض الصور ====== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    background: rgba(110, 110, 110, 0);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+
+/* ====== شريط الصور المتحرك ====== */
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column; /* الصور تحت بعض */
+    gap: 35px;
+}
+
+.slide img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+/* ====== الفوتر ====== */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+/* ====== تأثير الصور عند المرور عليها ====== */
+.logo-box img,
+.gallery-item img,
+.slide img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* لما تمر الماوس على الصورة */
+.logo-box img:hover,
+.gallery-item img:hover,
+.slide img:hover {
+    transform: scale(1.1) rotate(2deg); /* تكبر شوية وتلف بسيط */
+    filter: brightness(1.1); /* تضوي شوية */
+    cursor: pointer;
+}
+
+/* ممكن تعمل ظل متحرك كمان */
+.logo-box:hover,
+.gallery-item:hover,
+.slide:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+/* ====== النص التعريفي ====== */
+.intro-text {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-text .container {
+    max-width: 900px;
+}
+
+.intro-text p {
+    font-family: 'Cairo', sans-serif;
+    font-size: 22px;
+    line-height: 1.9;
+    color: #ffffff;
+    text-align: center;
+    
+    /* الإطار */
+    padding: 50px 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    
+    /* خلفية شفافة عشان الفيديو يبان */
+    background: rgba(0, 0, 0, 0.55);
+    
+    /* ظل خفيف يدي فخامة */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    
+    /* تأثير نعومة */
+    backdrop-filter: blur(3px);
+}
+
+
+
+.intro-text p {
+    font-family: 'Arial', sans-serif; /* خط واضح وجامد */
+    font-size: 18px; /* حجم الخط */
+    line-height: 1.8; /* مسافة بين السطور */
+    color: #ffffff; /* لون النص */
+}
+.logo-details {
+    background: #ffffff;
+    padding: 70px 0;
+}
+
+.logo-details h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #0077b6;
+}
+
+.section-subtitle {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #023e8a;
+}
+
+.logo-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.9;
+    font-size: 18px;
+    color: #333;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.detail-box {
+    background: #f1f5f9;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.detail-box h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #0077b6;
+}
+
+.detail-box p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.detail-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.final-message {
+    margin-top: 50px;
+    padding: 25px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.final-message h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.final-message p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+.bg-video{
+    position:fixed;
+    right:0;
+    bottom:0;
+    min-width:100%;
+    min-height:100%;
+    z-index:-5;;
+    object-fit:cover;
+}
+/* ====== قسم دلالات الألوان ====== */
+.colors-meanings {
+    background: #f8fbfd00;
+    padding: 70px 0;
+}
+
+.colors-meanings h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color:  rgb(0, 255, 149);
+}
+
+.colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.color-box {
+    padding: 30px;
+    border-radius: 18px;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.color-box h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.color-box ul {
+    margin: 15px 0;
+    padding-right: 18px;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.color-box li {
+    margin-bottom: 6px;
+}
+
+.color-desc {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.color-note {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* ألوان كل صندوق */
+.color-box.green {
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+.color-box.blue {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+}
+
+.color-box:hover {
+    transform: translateY(-8px);
+}
+.section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-section {
+    background: linear-gradient(135deg, #0f202734, #44bdf596, #49bb527c);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 20px;
+    margin: 40px 20px;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.486);
+}
+
+.section-title {
+    font-size: 60px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    font-size: 40px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    color: #e0f7fa;
+}
+
+/* يخلي شكل الكلام أشيك على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .about-text {
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    .slide img {
+        height: 200px;
+    }
+}
+.hero-content {
+    display: flex;
+    justify-content: center; /* توسيط الصورة أفقياً */
+    align-items: center;     /* توسيط الصورة رأسياً */
+    height: 100%;            /* تأكد أن hero-content يغطي كامل الهيرو */
+}
+
+.hero-content .hero-logo {
+    width: 1200px;           /* حجم الصورة */
+    max-width: 180%;         /* تجاوب مع الشاشات الصغيرة */
+    border-radius: 10px;    /* لو تحب حواف مدورة */
+}
+.gallery-section {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.gallery-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0); /* طبقة تغميق فوق الفيديو */
+    z-index: -1;
+}
